@@ -14,6 +14,7 @@ maven-test-docker:
   only:
     - tags
     - develop
+    - master
     - /^release-.*$/
     - /^hotfix-.*$/
 
