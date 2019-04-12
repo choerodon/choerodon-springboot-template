@@ -11,4 +11,7 @@ choerodon.io/version: {{ .Chart.Version | quote }}
 {{- define "service.match.labels" -}}
 choerodon.io/release: {{ .Release.Name | quote }}
 {{- end -}}
+{{- define "service.microservice.labels" -}}
+choerodon.io/service: {{ .Chart.Name | quote }}
+{{- end -}}
 
