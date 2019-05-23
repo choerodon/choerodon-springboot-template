@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Created by Zenger on 2018/5/21.
  */
-@RestController(value = "/hello")
+@RestController
 public class HelloController {
 
-    @GetMapping
+    @GetMapping(value = "/hello")
     public String hello() {
         return "Demo project for Spring Boot !";
     }
