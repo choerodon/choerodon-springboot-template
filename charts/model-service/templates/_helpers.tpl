@@ -14,3 +14,13 @@ choerodon.io/service: {{ .Chart.Name | quote }}
 choerodon.io/version: {{ .Chart.Version | quote }}
 {{- end -}}
 
+{{/*
+Return the appropriate apiVersion for deployment.
+*/}}
+{{- define "app.deployment.apiVersion" -}}
+{{- if semverCompare "<1.9-0" .Capabilities.KubeVersion.GitVersion -}}
+{{- print "apps/v1beta2" -}}
+{{- else -}}
+{{- print "apps/v1" -}}
+{{- end -}}
+{{- end -}}
